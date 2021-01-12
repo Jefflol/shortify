@@ -1,0 +1,162 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+
+html {
+    background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+small {
+    font-size: 12px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 5% auto 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#title {
+    text-align: center;
+}
+
+#linkForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.link-label {
+    display: none;
+}
+
+.link-input {
+    align-self: stretch;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #21209c;
+}
+
+.submit {
+    align-self: stretch;
+    justify-self: stretch;
+    margin: 10px 0;
+}
+
+#most-recent-links {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: 1px solid #23120b;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.link:first-of-type {
+    border-top: 1px solid #23120b;
+}
+
+.link > span {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.long-link {
+    margin: 10px 0;
+}
+
+.short-link {
+    margin: 10px 0;
+}
+
+.short-link > a {
+    color: #21209c;
+    text-decoration: none;;
+}
+
+.copy {
+    display: flex;
+    margin: 10px 0;
+}
+
+.button {
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.button:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
+.button-primary {
+    color: #f1f1f1;
+    background-color: #21209c;
+}
+
+.button-secondary {
+    color: #23120b;
+    background-color: #fdb827;
+}
+
+@media only screen and (min-width: 600px) {
+    #linkForm {
+        flex-direction: row;
+    }
+
+    .link-input {
+        flex: 1;
+        margin: 10px 10px 10px 0;
+    }
+
+    .submit {
+        margin: 10px 0 10px 10px;
+    }
+
+    .link {
+        flex-direction: row;
+    }
+
+    .link > span {
+        width: initial;
+    }
+
+    .long-link {
+        flex: 2;
+        width: 100%;
+        margin: 10px 10px 10px 0;
+    }
+
+    .short-link {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .copy {
+        display: initial;
+        flex: 1;
+        margin: 10px 0 10px 10px;
+    }
+}

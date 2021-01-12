@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortify</title>
+    <link rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Shortify</h1>
+        <small>Your link will be seen by others.</small>
+        <form id="linkForm" action="/api/url/shorten" method="POST">
+            <label class="link-label" for="longUrl">Url</label>
+            <input class="link-input" id="longUrl" type="url" name="longUrl" placeholder="https://...." />
+            <button class="submit button button-primary" type="submit">Shorten</button>
+        </form>
+        <h3>The last 5 shortened links are:</h3>
+        <ul id="most-recent-links">
+            <% urls.forEach(url => { %>
+                <li class="link">
+                    <span class="long-link"><%= url.longUrl %></span>
+                    <span>
+                        <span class="short-link">
+                            <a href="<%= url.shortUrl %>" target="_blank" title="Shortended URL for <%= url.longUrl %>">
+                                <%= url.shortUrl %>
+                            </a>
+                        </span>
+                        <span class="copy">
+                            <button class="button button-secondary">Copy</button>
+                        </span>
+                    </span>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <script>
+        const copy = e => {
+            let copyText = e.target.parentNode.parentNode.childNodes[1].innerText;
+
+            // Create mock input for copy functionality
+            let mockInput = document.createElement('input');
+            document.body.appendChild(mockInput);
+            mockInput.type = "text";
+            mockInput.value = copyText.trim();
+
+            // Select input
+            mockInput.select();
+            mockInput.setSelectionRange(0, 99999);
+
+            // Copy text
+            document.execCommand("copy");
+
+            // Remove mock input
+            mockInput.parentNode.removeChild(mockInput);
+
+            console.log(copyText);
+        }
+
+        let copyButtons = document.getElementsByClassName('copy');
+        for (const copyBtn of copyButtons) {
+            copyBtn.addEventListener('click', copy);
+        }
+    </script>
+</body>
+</html>
