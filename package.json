@@ -10,9 +10,9 @@
   "author": "Jefflol",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.11.9",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.5",
     "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
   }
